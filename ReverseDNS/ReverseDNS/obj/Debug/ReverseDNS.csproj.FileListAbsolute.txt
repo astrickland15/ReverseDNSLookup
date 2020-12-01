@@ -1,0 +1,10 @@
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\bin\Debug\ReverseDNS.exe.config
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\bin\Debug\ReverseDNS.exe
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\bin\Debug\ReverseDNS.pdb
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.csprojAssemblyReference.cache
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.Form1.resources
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.Properties.Resources.resources
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.csproj.GenerateResource.cache
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.csproj.CoreCompileInputs.cache
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.exe
+C:\Users\Anthony.Strickland\source\repos\ReverseDNS\ReverseDNS\obj\Debug\ReverseDNS.pdb
