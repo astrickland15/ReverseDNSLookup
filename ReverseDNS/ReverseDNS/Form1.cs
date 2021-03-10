@@ -18,13 +18,6 @@ namespace ReverseDNS
         public static string ipList;
         public static string notMatchingIPs;
         
-       
-
-
-
-
-
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -33,32 +26,25 @@ namespace ReverseDNS
 
         private void Submit_Click(object sender, EventArgs e)
         {
-
-
             if (string.IsNullOrEmpty(IPAddress.Text))
             {
                 MessageBox.Show("Please enter an IP Address!");
                 return;
             }
-
-
+            
             List<string> ipsQueried = new List<string>();
             List<string> ipsResolved = new List<string>();
 
             foreach (var ip in IPAddress.Lines)
             {
-
                 if (!IsValidIP(ip))
                 {
                     MessageBox.Show("You have entered an Invalid IP Address!!!");
                     return;
                 }
-
-
-
+                               
                 if (noBlanks(ip))
                 {
-
                     try {
 
                         IPHostEntry value = Dns.GetHostEntry(ip);
@@ -69,15 +55,13 @@ namespace ReverseDNS
                     }
                     catch
                     {
-
+                        MessageBox.Show("IP is not setup!!", ip);
                     }
 
                 }
             }
 
             Domain.Text = domainList;
-
-
             DomCheck.Text = Domain.Text;
 
 
@@ -87,25 +71,15 @@ namespace ReverseDNS
 
                 try
                 {
-
-                   
                     if (noBlanks(domain))
                     {
-
                         IPHostEntry finalIP = Dns.GetHostEntry(domain);
                         string ipResolvedFromDomain = finalIP.AddressList[0].ToString();
                         ipsResolved.Add(ipResolvedFromDomain);
                         ipList += ipResolvedFromDomain + Environment.NewLine;
-
-
-
-
-
                     }
-
                 }
-          
-
+    
             catch
             {
 
@@ -113,34 +87,25 @@ namespace ReverseDNS
             IPResolve.Text = ipList;
         }  
 
-                var firstNotSecond = ipsQueried.Except(ipsResolved).ToList();
-
+            var firstNotSecond = ipsQueried.Except(ipsResolved).ToList();
             notMatching.Text = displayNonResolvingIps(firstNotSecond);
-
-
-
-
-
-        }
-
-
-     
-
-    private void WriteText_Click(object sender, EventArgs e)
-        {
-            string path = @"c:\testing\IPsNotResolving.txt";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(notMatching.Text);
-            }
-
-            written.Visible = true;
-            written.Text = "complete";
-            written.ForeColor = System.Drawing.Color.Green;
-        
     }
 
-    private void label4_Click(object sender, EventArgs e)
+
+        private void WriteText_Click(object sender, EventArgs e)
+        {
+                string path = @"c:\testing\IPsNotResolving.txt";
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(notMatching.Text);
+                }
+
+                written.Visible = true;
+                written.Text = "complete";
+                written.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
@@ -161,13 +126,11 @@ namespace ReverseDNS
                 {
                     return false;
                 }
-
             }
 
-
-            public bool IsValidIP(string text)
-            {
-                if (text != "")
+        public bool IsValidIP(string text)
+        {
+            if (text != "")
             {
 
 
@@ -179,12 +142,7 @@ namespace ReverseDNS
             {
                 return true;
             }
-
-           
-
-
         }
-
 
         public bool noBlanks(string word)
             {
@@ -197,24 +155,18 @@ namespace ReverseDNS
                 {
                     return false;
                 }
-            }
+             }
 
-            private void Form1_Load(object sender, EventArgs e)
-            {
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-            }
+        }
 
         private void clear_Click(object sender, EventArgs e)
         {
             clearForm(this);
             domainList = "";
             ipList = "";
-
-
-
-
-
-
         }
        
         private void clearForm(Control control)
@@ -227,12 +179,9 @@ namespace ReverseDNS
                     written.Visible = false;
                 }
             }
-        }
-
-      
-       
+        }  
     }
-    }
+}
 
 
 
